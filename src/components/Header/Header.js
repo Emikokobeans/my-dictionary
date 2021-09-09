@@ -8,7 +8,7 @@ import {
   MenuItem
 } from '@material-ui/core';
 
-const Header = ({ language, setLanguage }) => {
+const Header = ({ language, setLanguage, word, setWord }) => {
   const darkTheme = createTheme({
     palette: {
       primary: {
@@ -18,18 +18,28 @@ const Header = ({ language, setLanguage }) => {
     }
   });
 
+  const handleChange = (language) => {
+    setLanguage(language);
+    setWord('');
+  };
+
   return (
     <div className='header'>
-      <span className='title'>Dictionary</span>
+      <span className='title'>{word ? word : 'Dictionary'}</span>
       <div className='input'>
         <ThemeProvider theme={darkTheme}>
-          <TextField id='standard-basic' label='Standard' />
           <TextField
-            id='standard-select-currency'
+            className='search'
+            label='Search'
+            value={word}
+            onChange={(event) => setWord(event.target.value)}
+          />
+          <TextField
+            className='select'
             select
-            label='Select'
+            label='Language'
             value={language}
-            onChange={(event) => setLanguage(event.target.value)}
+            onChange={(event) => handleChange(event.target.value)}
             helperText='Please select your currency'
           >
             {languages.map((option) => (
