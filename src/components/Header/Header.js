@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css';
+import languages from '../../data/language';
 import {
   TextField,
   createTheme,
@@ -7,7 +8,7 @@ import {
   MenuItem
 } from '@material-ui/core';
 
-const Header = () => {
+const Header = ({ language, setLanguage }) => {
   const darkTheme = createTheme({
     palette: {
       primary: {
@@ -27,9 +28,15 @@ const Header = () => {
             id='standard-select-currency'
             select
             label='Select'
+            value={language}
+            onChange={(event) => setLanguage(event.target.value)}
             helperText='Please select your currency'
           >
-            <MenuItem>English</MenuItem>
+            {languages.map((option) => (
+              <MenuItem key={option.label} value={option.label}>
+                {option.value}
+              </MenuItem>
+            ))}
           </TextField>
         </ThemeProvider>
       </div>
