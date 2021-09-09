@@ -23,7 +23,7 @@ const Definitions = ({ word, definitions, language, lightMode }) => {
               <div
                 className='singleDef'
                 style={{
-                  backgroundColor: lightMode ? '#414141' : '#FFF',
+                  backgroundColor: lightMode ? '#414141' : '#EBECF0',
                   color: lightMode ? '#fff' : 'black'
                 }}
               >

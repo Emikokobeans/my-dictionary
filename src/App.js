@@ -7,7 +7,7 @@ import Header from './components/Header/Header';
 import Definitions from './components/Definitions/Definitions';
 
 function App() {
-  const [word, setWord] = useState([' ']);
+  const [word, setWord] = useState(['']);
   const [definitions, setDefinitions] = useState([]);
   const [language, setLanguage] = useState('en');
   const [lightMode, setLightMode] = useState(false);
@@ -49,7 +49,7 @@ function App() {
       style={{
         height: '100vh',
         backgroundColor: lightMode ? '#fff' : '#282c34',
-        color: lightMode ? 'black' : 'white',
+        color: lightMode ? 'black' : '#EBECF0',
         transition: 'all 0.5s linear'
       }}
     >

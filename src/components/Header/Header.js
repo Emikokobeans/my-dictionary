@@ -12,7 +12,7 @@ const Header = ({ language, setLanguage, word, setWord, lightMode }) => {
   const darkTheme = createTheme({
     palette: {
       primary: {
-        main: lightMode ? '#000' : '#FFF'
+        main: lightMode ? '#000' : '#EBECF0'
       },
       type: lightMode ? 'light' : 'dark'
     }
