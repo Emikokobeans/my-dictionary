@@ -40,7 +40,7 @@ const Header = ({ language, setLanguage, word, setWord }) => {
             label='Language'
             value={language}
             onChange={(event) => handleChange(event.target.value)}
-            helperText='Please select your currency'
+            helperText='Please select language'
           >
             {languages.map((option) => (
               <MenuItem key={option.label} value={option.label}>
