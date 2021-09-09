@@ -6,7 +6,7 @@ import Header from './components/Header/Header';
 import Definitions from './components/Definitions/Definitions';
 
 function App() {
-  const [word, setWord] = useState(['']);
+  const [word, setWord] = useState([' ']);
   const [definitions, setDefinitions] = useState([]);
   const [language, setLanguage] = useState('en');
 
@@ -20,6 +20,8 @@ function App() {
       console.log(err);
     }
   };
+
+  console.log(definitions);
 
   useEffect(() => {
     dictionaryApi();
@@ -40,7 +42,13 @@ function App() {
           word={word}
           setWord={setWord}
         />
-        <Definitions />
+        {definitions && (
+          <Definitions
+            word={word}
+            definitions={definitions}
+            language={language}
+          />
+        )}
       </Container>
     </div>
   );
