@@ -80,6 +80,7 @@ function App() {
             word={word}
             definitions={definitions}
             language={language}
+            lightMode={lightMode}
           />
         )}
       </Container>
