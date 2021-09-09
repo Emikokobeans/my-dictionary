@@ -8,13 +8,13 @@ import {
   MenuItem
 } from '@material-ui/core';
 
-const Header = ({ language, setLanguage, word, setWord }) => {
+const Header = ({ language, setLanguage, word, setWord, lightMode }) => {
   const darkTheme = createTheme({
     palette: {
       primary: {
-        main: '#FFF'
+        main: lightMode ? '#000' : '#FFF'
       },
-      type: 'dark'
+      type: lightMode ? 'light' : 'dark'
     }
   });
 
