@@ -39,6 +39,7 @@ function App() {
 
   useEffect(() => {
     dictionaryApi();
+    // eslint-disable-next-line
   }, [word, language]);
 
   return (
