@@ -8,7 +8,14 @@ import {
   MenuItem
 } from '@material-ui/core';
 
-const Header = ({ language, setLanguage, word, setWord, lightMode }) => {
+const Header = ({
+  language,
+  setLanguage,
+  word,
+  setWord,
+  lightMode,
+  setDefinitions
+}) => {
   const darkTheme = createTheme({
     palette: {
       primary: {
@@ -19,8 +26,9 @@ const Header = ({ language, setLanguage, word, setWord, lightMode }) => {
   });
 
   const handleChange = (language) => {
-    setLanguage(language);
+    setLanguage(language.target.value);
     setWord('');
+    setDefinitions([]);
   };
 
   return (
@@ -39,7 +47,7 @@ const Header = ({ language, setLanguage, word, setWord, lightMode }) => {
             select
             label='Language'
             value={language}
-            onChange={(event) => handleChange(event.target.value)}
+            onChange={(event) => handleChange(event)}
             helperText='Please select language'
           >
             {languages.map((option) => (
